@@ -20,6 +20,7 @@
 
 {% block content %}
   <h1>Title: {{ book.title }}</h1>
+  <img src="{{ book.image.url }}" class="img-thumbnail" alt="Book Cover">
 
   <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
   <!-- author detail link not yet defined -->
