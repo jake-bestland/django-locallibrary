@@ -3,14 +3,18 @@
 {% block content %}
   <h1>Book List</h1>
   {% if book_list %}
-    <ul>
+    <ol class="list-group list-group-numbered">
       {% for book in book_list %}
-      <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
-        ({{book.author}})
+      <li class="list-group-item d-flex bg-transparent">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">
+            <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+          </div>
+          ({{book.author}})
+        </div>
       </li>
       {% endfor %}
-    </ul>
+    </ol>
   {% else %}
     <p>There are no books in the library.</p>
   {% endif %}

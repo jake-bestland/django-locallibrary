@@ -13,12 +13,27 @@
   </p>
   <h2>Dynamic content</h2>
   <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
-    <li><strong>Genres:</strong> {{ num_genres }}</li>
+  <ul class="list-group col-sm-3 border border-black ">
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-black bg-transparent">
+      <strong>Books:</strong>
+      <span class="badge text-bg-primary rounded-pill">{{ num_books }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-black bg-transparent">
+      <strong>Copies:</strong>
+      <span class="badge text-bg-primary rounded-pill">{{ num_instances }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-black bg-transparent">
+      <strong>Copies available:</strong>
+      <span class="badge text-bg-primary rounded-pill">{{ num_instances_available }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-black bg-transparent">
+      <strong>Authors:</strong>
+      <span class="badge text-bg-primary rounded-pill">{{ num_authors }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-black bg-transparent">
+      <strong>Genres:</strong>
+      <span class="badge text-bg-primary rounded-pill">{{ num_genres }}</span>
+    </li>
   </ul>
 
   <p>
