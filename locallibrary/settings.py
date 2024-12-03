@@ -25,13 +25,10 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-hg0d3%h)#v*ji5u^e&!u6x-_t3e2v65ujm(x9*oi2+f4f3*z^m'
-import os
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-hg0d3%h)#v*ji5u^e&!u6x-_t3e2v65ujm(x9*oi2+f4f3*z^m')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = os.getenv('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['jacobb.pythonanywhere.com', '127.0.0.1']
 
