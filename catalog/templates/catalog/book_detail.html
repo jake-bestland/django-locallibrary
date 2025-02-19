@@ -7,10 +7,10 @@
   <hr>
   <ul class="sidebar-nav">
     {% if perms.catalog.change_book %}
-      <li><a href="{% url 'book-update' book.id %}">Update book</a></li>
+      <li><a href="{% url 'book-update' book.id %}" class="nav-link link-light">Update book</a></li>
     {% endif %}
     {% if not book.bookinstance_set.all and perms.catalog.delete_book %}
-      <li><a href="{% url 'book-delete' book.id %}">Delete book</a></li>
+      <li><a href="{% url 'book-delete' book.id %}" class="nav-link link-light">Delete book</a></li>
     {% endif %}
     </ul>
   {% endif %}
@@ -20,7 +20,9 @@
 
 {% block content %}
   <h1>Title: {{ book.title }}</h1>
-  <img src="{{ book.image.url }}" class="img-thumbnail" alt="Book Cover">
+  {% if author.image %}
+    <img src="{{ book.image.url }}" class="img-thumbnail" alt="Book Cover">
+  {% endif %}
 
   <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
   <!-- author detail link not yet defined -->

@@ -7,10 +7,10 @@
   <hr>
   <ul class="sidebar-nav">
     {% if perms.catalog.change_author %}
-      <li><a href="{% url 'author-update' author.id %}">Update author</a></li>
+      <li><a href="{% url 'author-update' author.id %}" class="nav-link link-light">Update author</a></li>
     {% endif %}
     {% if not author.book_set.all and perms.catalog.delete_author %}
-      <li><a href="{% url 'author-delete' author.id %}">Delete author</a></li>
+      <li><a href="{% url 'author-delete' author.id %}" class="nav-link link-light">Delete author</a></li>
     {% endif %}
     </ul>
   {% endif %}
@@ -19,7 +19,9 @@
 
 {% block content %}
 <h1>Author: {{ author }}</h1>
-<img src="{{ author.image.url }}" class="img-thumbnail" alt="Author Image">
+{% if author.image %}
+  <img src="{{ author.image.url }}" class="img-thumbnail" alt="Author Image">
+{% endif %}
 
 <p>{{ author.date_of_birth }} - {% if author.date_of_death %}{{ author.date_of_death }}{% endif %}</p>
 
